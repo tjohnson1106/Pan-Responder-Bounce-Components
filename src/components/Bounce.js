@@ -55,8 +55,18 @@ class Bounce extends Component {
   }
   render() {
     return (
-      <Animated.View style={styles.container}>
-        <View>{...this._panResponder.panHandlers}</View>
+      <Animated.View
+        style={[
+          {
+            transform: [
+              {
+                scale: this.state.scale
+              }
+            ]
+          }
+        ]}
+      >
+        <View {...this._panResponder.panHandlers} />
       </Animated.View>
     );
   }
